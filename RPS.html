@@ -1,0 +1,189 @@
+<html>
+<head><title>Rock &hArr; Paper &hArr; Scissors</title></head>
+<body onLoad="kaput()" bgcolor="#fcf4df">
+
+<script type="text/javascript">
+var selectionU, selectionC, score, winner, results, oldresults, turn, resolutionMatrix,
+	winMsgMatrix, Name, mistake1, mistake2;
+
+function kaput()
+{
+	document.getElementById("msg").innerHTML="Enter your name and press 'Start' to begin! &#8594;";
+	document.getElementById("RButton").disabled=true;
+	document.getElementById("PButton").disabled=true;
+	document.getElementById("SButton").disabled=true;
+	resolutionMatrix=[0,-1,1,1,0,-1,-1,1,0];
+	winMsgMatrix=["Computer wins!","It's a tie!","Human wins!"];
+}
+
+function start()
+{
+	score=0;
+	turn=0;
+	results='';	
+	Name=document.getElementById("Name").value;
+	Name = Name.toLowerCase();
+	mistake1 = (Name.charCodeAt(0)-"a".charCodeAt(0))%9;
+	mistake2 = (Name.charCodeAt(1)-"a".charCodeAt(0))%9;
+	if (mistake1 == mistake2) 
+	{
+		mistake2 = (mistake2 + 4) % 9;
+	}
+	resolutionMatrix[mistake1]=((resolutionMatrix[mistake1]+2)%3)-1;
+	resolutionMatrix[mistake2]=((resolutionMatrix[mistake2]+3)%3)-1;
+	document.getElementById("Name").disabled=true;
+	document.getElementById("instructions").innerHTML="You go first, human!";
+	document.getElementById("Console").innerHTML="&nbsp;";
+	document.getElementById("msg").innerHTML="&nbsp;";
+	document.getElementById("StartButton").innerHTML="Restart";
+	document.getElementById("RButton").disabled=false;
+	document.getElementById("PButton").disabled=false;
+	document.getElementById("SButton").disabled=false;
+}
+
+function iterDisplay0() {
+       	document.getElementById("instructions").innerHTML="&nbsp;";
+        document.getElementById("RButton").disabled=true;
+        document.getElementById("PButton").disabled=true;
+        document.getElementById("SButton").disabled=true;
+        results='<tr><td align="center" style="background-color:#003333; color:#003333">Turn</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;"><img src="../images/BlankU.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;"><img src="../images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="90">Score: &nbsp;&nbsp; </tr>'+oldresults;
+        document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
+        document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>&nbsp;</h2></td></tr></tbody></table>';
+}
+
+function iterDisplay1() {
+	results='<tr><td align="center" style="background-color:#003333; color:#ffffff">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;"><img src="../images/BlankU.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;"><img src="../images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="90">Score: &nbsp;&nbsp; </tr>'+oldresults;
+	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
+    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... </h2></td></tr></tbody></table>';
+}
+
+
+function iterDisplay2() {
+	results='<tr><td align="center" style="background-color:#003333; color:#ffffff">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;"><img src="../images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="90">Score: &nbsp;&nbsp;</tr>'+oldresults;
+	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
+	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... </h2></td></tr></tbody></table>';
+}
+
+function iterDisplay3() {
+
+	results='<tr><td align="center" style="background-color:#003333; color:#ffffff">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;">'+cImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="90">Score: &nbsp;&nbsp;</tr>'+oldresults;
+	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
+    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... 3!!!</h2></td></tr></tbody></table>';
+}
+
+function iterDisplay4() {
+
+	results='<tr><td align="center" style="background-color:#003333; color:#ffffff">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;">'+cImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="90">Score: '+score+'</tr>'+oldresults;
+	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
+	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... 3!!! &nbsp;&nbsp;&nbsp;&nbsp;'+winner+'</h2></td></tr></tbody></table>';
+	document.getElementById("RButton").disabled=false;
+	document.getElementById("PButton").disabled=false;
+	document.getElementById("SButton").disabled=false;
+	document.getElementById("instructions").innerHTML="Your turn, human!";
+}
+
+function display()
+{
+	turn+=1;
+	oldresults=results;
+	setTimeout("iterDisplay0()",0);
+	setTimeout("iterDisplay1()",1500);
+	setTimeout("iterDisplay2()",3000);
+	setTimeout("iterDisplay3()",4500);
+	setTimeout("iterDisplay4()",6000);
+}
+
+function computerTurn()
+{
+	selectionC = Math.floor(Math.random()*3);
+	if (selectionC == 0)
+	{
+		cImg = '<img src="../images/RockC.png" title="Computer plays Rock" alt="Computer plays Rock"\>';
+	}
+	else if (selectionC == 1)
+	{
+		cImg = '<img src="../images/PaperC.png" title="Computer plays Paper" alt="Computer plays Paper"\>';
+	}
+	else
+	{
+		cImg = '<img src="../images/ScissorsC.png" title="Computer plays Scissors" alt="Computer plays Scissors"\>';
+	}
+	whoWon();
+}
+
+function playRock()
+{
+	selectionU = 0;
+	uImg = '<img src="../images/RockU.png" title="Human plays Rock" alt="Human plays Rock"\>';
+	computerTurn();	
+	display();
+}
+
+function playPaper()
+{
+	selectionU = 1;
+	uImg = '<img src="../images/PaperU.png" title="Human plays Paper" alt="Human plays Paper"\>';
+	computerTurn();	
+	display();
+}
+
+function playScissors()
+{
+	selectionU = 2;
+	uImg = '<img src="../images/ScissorsU.png" title="Human plays Scissors" alt="Human plays Scissors"\>';
+	computerTurn();	
+	display();
+}
+
+function whoWon()
+{
+	score += (resolutionMatrix[3*selectionU+selectionC]);
+	winner = winMsgMatrix[(resolutionMatrix[3*selectionU+selectionC])+1];
+}
+
+</script>
+<img src="../images/BlankC.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/BlankU.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/RockC.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/RockU.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/PaperC.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/PaperU.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/ScissorsC.png" style="visibility:hidden;" width="1" height="1" border="0">
+<img src="../images/ScissorsU.png" style="visibility:hidden;" width="1" height="1" border="0">
+<table border="0" cellpadding="15px" >
+<tr><td style="vertical-align:top; border: solid 5px #000; background: #9AB9AD;">
+
+<table width="480px" border="0" style="background: #cc5500; border: solid 1px #000; margin:5px;">
+<tr><td>
+<button id="RButton" type="button" onClick="playRock()">&nbsp;&nbsp;Rock&nbsp;&nbsp;</button></td>
+<td><button id="PButton" type="button" onClick="playPaper()">&nbsp;Paper&nbsp;&nbsp;</button></td>
+<td><button id="SButton" type="button" onClick="playScissors()">Scissors</button>
+</td>
+<td id="instructions" width="50%">&nbsp;</td>
+</tr></table>
+
+<div id="Console">&nbsp;</div>
+<div id="msg" align="right">&nbsp;</div>
+
+</td>
+<td style="vertical-align:top;">
+<h1>Rock &hArr; Paper &hArr; Scissors</h1>
+
+<p>
+Enter your first name: <input id="Name" type="text"onkeydown="if (event.keyCode == 13) document.getElementById('StartButton').click()">&nbsp;&nbsp;
+<button id="StartButton" type="button" onClick="start()">Start</button>
+</p>
+<p>
+<a href="http://en.wikipedia.org/wiki/Rock-paper-scissors">Rock, Paper, Scissors</a> is an ancient game, dating back to at least the Han Dynasty &#28450;&#26397; (approximately, 206 BCE &ndash; 220 CE). Now, it has come into the 21st Century, burgeoned by a young, slightly obnoxious, artificial intelligence AI named Wintermute. Wintermute challenges <i>you</i> to a duel, promising to best you&mdash;as mankind's representative&mdash;at this most ancient example of human conflict resolution.
+</p>
+<p>There's a <i>slight</i> problem. Wintermute isn't quite as artificially intelligent as it is pretentious. It doesn't always get the rules right. In order to be smug and crush its little artificial dreams, you decide to document its errors.</p>
+<p>
+Using a <b>black-box testing</b> approach, <img src="../images/RPScycle.png" alt="The RPS cycle" style="float:right;"/>find the error(s) in Wintermute's logic. Because you don't know <i>how</i> Wintermute functions, you are restricted to testing predicted against actual outputs given each input. In other words, figure out when it gets the "wrong answer".
+</p>
+<p>Scoring is kept by adding 1 point to the score for each hand (haha) you win, and by subtracting 1 point for each hand Wintermute wins. Ties are worth nothing. A running total score is displayed; If it is negative, Wintermute is winning. If it is positive, you are winning.</p>
+<p>Lastly, for those who may not know the rules, each player chooses a play (rock, paper, or scissors). The winner is determined as follows: rock crushes scissors, scissors cut paper, and paper covers rock. The diagram to the right conveys the same information.</p>
+</td>
+</tr></table>
+</body>
+</html>
+

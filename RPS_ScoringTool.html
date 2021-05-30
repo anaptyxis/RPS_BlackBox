@@ -1,0 +1,58 @@
+<html>
+<head><title>Rock &hArr; Paper &hArr; Scissors &mdash; Teacher Tool</title></head>
+<body onLoad="kaput()" bgcolor="#fcf4df">
+
+<script type="text/javascript">
+var resolutionMatrix, mistake1Matrix, mistake2Matrix, Name, mistake1, mistake2;
+
+function kaput()
+{
+	resolutionMatrix=[0,-1,1,1,0,-1,-1,1,0];
+	mistake1Matrix=["Player's ROCK beats Computer's ROCK",
+					"Player's ROCK ties with Computer's PAPER",
+					"Player's ROCK loses to Computer's SCISSORS",
+					"Player's PAPER loses to Computer's ROCK",
+					"Player's PAPER beats Computer's PAPER",
+					"Player's PAPER ties with Computer's SCISSORS",
+					"Player's SCISSORS ties with Computer's ROCK",
+					"Player's SCISSORS loses to Computer's PAPER",
+					"Player's SCISSORS beats Computer's SCISSORS"];
+	mistake2Matrix=["Player's ROCK loses to Computer's ROCK",
+					"Player's ROCK beats Computer's PAPER",
+					"Player's ROCK ties with Computer's SCISSORS",
+					"Player's PAPER ties with Computer's ROCK",
+					"Player's PAPER loses to Computer's PAPER",
+					"Player's PAPER beats Computer's SCISSORS",
+					"Player's SCISSORS beats Computer's ROCK",
+					"Player's SCISSORS ties with Computer's PAPER",
+					"Player's SCISSORS loses to Computer's SCISSORS"];
+}
+
+function start()
+{
+	Name=document.getElementById("Name").value;
+	Name = Name.toLowerCase();
+	mistake1 = (Name.charCodeAt(0)-"a".charCodeAt(0))%9;
+	mistake2 = (Name.charCodeAt(1)-"a".charCodeAt(0))%9;
+	if (mistake1 == mistake2) 
+	{
+		mistake2 = (mistake2 + 4) % 9;
+	}
+	resolutionMatrix[mistake1]=((resolutionMatrix[mistake1]+2)%3)-1;
+	resolutionMatrix[mistake2]=((resolutionMatrix[mistake2]+3)%3)-1;
+	document.getElementById("Output").innerHTML=mistake1Matrix[mistake1]+"<br />"+mistake2Matrix[mistake2];
+}
+
+</script>
+
+<h1>Rock &hArr; Paper &hArr; Scissors</h1>
+<h2>Teacher Tool</h2>
+
+<p>
+Enter the student&rsquo;s first name: <input id="Name" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('ProcessButton').click()"><br/>
+<button id="ProcessButton" type="button" onClick="start()">Get errors for this student</button>
+</p>
+<table cellpadding="10px" cellspacing="0" border="0" width="400px"><tbody><tr><td style="background:#9AB9AD;"><p><div id="Output">&nbsp;</div></p>
+</td></tr></tbody></table></body>
+</html>
+
