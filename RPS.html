@@ -1,50 +1,66 @@
 <html>
-<head><title>Rock &hArr; Paper &hArr; Scissors</title></head>
 
-<script type="text/javascript" src="RPS.js"></script>
-<body onLoad="initialize()" bgcolor="#fcf4df">
-<img src="../images/BlankC.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/BlankU.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/RockC.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/RockU.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/PaperC.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/PaperU.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/ScissorsC.png" style="visibility:hidden;" width="1" height="1" border="0">
-<img src="../images/ScissorsU.png" style="visibility:hidden;" width="1" height="1" border="0">
-<table border="0" cellpadding="15px" >
-<tr><td style="vertical-align:top; border: solid 5px #000; background: #9AB9AD;">
+<head>
+  <title>Rock &hArr; Paper &hArr; Scissors</title>
+  <script type="text/javascript" src="scripts/RPS.js"></script>
+</head>
 
-<table width="480px" border="0" style="background: #cc5500; border: solid 1px #000; margin:5px;">
-<tr><td>
-<button id="RButton" type="button" onClick="playRock()">&nbsp;&nbsp;Rock&nbsp;&nbsp;</button></td>
-<td><button id="PButton" type="button" onClick="playPaper()">&nbsp;Paper&nbsp;&nbsp;</button></td>
-<td><button id="SButton" type="button" onClick="playScissors()">Scissors</button>
-</td>
-<td id="instructions" width="50%">&nbsp;</td>
-</tr></table>
+<body onLoad="initialize()" bgcolor="#FCF4DF">
+  <table border="0" cellpadding="15px">
+    <tr>
+      <td style="vertical-align:top; border: solid 5px #000; background: #9AB9AD;">
+        <table width="480px" border="0" style="background: #BF5700; border: solid 1px #000; margin:5px;">
+          <tr>
+            <td>
+              <button id="RButton" type="button" onClick="playRock()">&nbsp;&nbsp;Rock&nbsp;&nbsp;</button>
+            </td>
+            <td>
+              <button id="PButton" type="button" onClick="playPaper()">&nbsp;Paper&nbsp;&nbsp;</button></td>
+            <td>
+              <button id="SButton" type="button" onClick="playScissors()">Scissors</button>
+            </td>
+            <td id="instructions" width="50%">
+              &nbsp;
+            </td>
+          </tr>
+        </table>
 
-<div id="Console">&nbsp;</div>
-<div id="msg" align="right">&nbsp;</div>
+        <div id="Console">&nbsp;</div>
+        <div id="msg" align="right">&nbsp;</div>
 
-</td>
-<td style="vertical-align:top;">
-<h1>Rock &hArr; Paper &hArr; Scissors</h1>
+      </td>
+      <td style="vertical-align:top;">
+        <h1>Rock &hArr; Paper &hArr; Scissors</h1>
 
-<p>
-Enter your first name: <input id="Name" type="text"onkeydown="if (event.keyCode == 13) document.getElementById('StartButton').click()">&nbsp;&nbsp;
-<button id="StartButton" type="button" onClick="start()">Start</button>
-</p>
-<p>
-<a href="http://en.wikipedia.org/wiki/Rock-paper-scissors">Rock, Paper, Scissors</a> is an ancient game, dating back to at least the Han Dynasty &#28450;&#26397; (approximately, 206 BCE &ndash; 220 CE). Now, it has come into the 21st Century, burgeoned by a young, slightly obnoxious, artificial intelligence AI named Wintermute. Wintermute challenges <i>you</i> to a duel, promising to best you&mdash;as mankind's representative&mdash;at this most ancient example of human conflict resolution.
-</p>
-<p>There's a <i>slight</i> problem. Wintermute isn't quite as artificially intelligent as it is pretentious. It doesn't always get the rules right. In order to be smug and crush its little artificial dreams, you decide to document its errors.</p>
-<p>
-Using a <b>black-box testing</b> approach, <img src="../images/RPScycle.png" alt="The RPS cycle" style="float:right;"/>find the error(s) in Wintermute's logic. Because you don't know <i>how</i> Wintermute functions, you are restricted to testing predicted against actual outputs given each input. In other words, figure out when it gets the "wrong answer".
-</p>
-<p>Scoring is kept by adding 1 point to the score for each hand (haha) you win, and by subtracting 1 point for each hand Wintermute wins. Ties are worth nothing. A running total score is displayed; If it is negative, Wintermute is winning. If it is positive, you are winning.</p>
-<p>Lastly, for those who may not know the rules, each player chooses a play (rock, paper, or scissors). The winner is determined as follows: rock crushes scissors, scissors cut paper, and paper covers rock. The diagram to the right conveys the same information.</p>
-</td>
-</tr></table>
+        <p>
+          Enter your first name: <input id="name" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('StartButton').click()">&nbsp;&nbsp;
+          <button id="StartButton" type="button" onClick="start()">Start</button>
+        </p>
+        <p>
+          <img src="./images/RPScycle.png" alt="The RPS cycle" style="float:right;" />
+          <a href="http://en.wikipedia.org/wiki/Rock-paper-scissors">Rock, Paper, Scissors</a> is an ancient game, dating back to at least the Han Dynasty &#28450;&#26397; (approximately, 206 BCE&ndash;220 CE). Now, it has come into the
+          21<sup>st</sup>
+          Century, burgeoned by a young, slightly obnoxious, artificial intelligence AI named Wintermute. Wintermute challenges <em>you</em> to a duel, promising to best you&mdash;as humankind's representative&mdash;at this most ancient example of
+          human
+          conflict resolution.
+        </p>
+        <p>There's a <em>slight</em> problem. Wintermute isn't quite as artificially intelligent as it is pretentious. It doesn't always get the rules right. In order to be smug and crush its little artificial dreams, you decide to document its
+          errors.
+        </p>
+        <p>
+          Using a <strong>black-box testing</strong> approach, find the error(s) in Wintermute's logic. Because you don't know <em>how</em> Wintermute functions, you are restricted to
+          testing predicted against actual outputs given each input. In other words, figure out when it gets the &ldquo;wrong answer&rdquo;.
+        </p>
+        <p>
+          Scoring is kept by adding 1 point to your score for each hand (haha) you win, and 1 point to the computer's score for each hand Wintermute wins. Ties are worth nothing.
+        </p>
+        <p>
+          Lastly, for those who may not know the rules, each player chooses a play (rock, paper, or scissors). The winner is determined as follows: rock crushes scissors, scissors cut paper, and paper covers rock. The diagram to the right conveys
+          the same information.
+        </p>
+      </td>
+    </tr>
+  </table>
 </body>
-</html>
 
+</html>
