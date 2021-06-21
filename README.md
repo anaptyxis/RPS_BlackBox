@@ -1,6 +1,6 @@
 # RPS_BlackBox
 
-This project is designed to give students an environment to practice basic black box testing by manually creating hypothetical input/output test cases and comparing them to actual outcomes. The project does *not* incorporate automated testing, but rather is designed to give complete novices a sandbox to explore creating test cases in a well-defined, circumscribed environemnt.
+This project is designed to give students an environment to explore the idea of basic black box testing by manually creating hypothetical input/output test cases and comparing them to actual outcomes. The project does *not* incorporate automated testing, but rather is designed to give complete novices a sandbox to explore creating test cases in a well-defined, circumscribed environemnt.
 
 This activity is designed to precede a programming assignment in which students must code a score resolution routine for Rock, Paper, Scissors.
 
