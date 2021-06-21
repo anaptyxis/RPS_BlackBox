@@ -4,7 +4,7 @@ This project is designed to give students an environment to explore the idea of 
 
 This activity is designed to precede a programming assignment in which students must code a score resolution routine for Rock, Paper, Scissors.
 
-## Rock, Paper, Scissors gameplay
+## Rock, Paper, Scissors Gameplay
 
 The game Rock, Paper, Scissors is implemented in Javascript to run in a standard web browser. Students may select a play, and the application will generate a pseudo-random play in response. Finally, the outcome is noted with an update to the score.
 
