@@ -45,10 +45,12 @@ function start() {
   document.getElementById("RButton").disabled = false;
   document.getElementById("PButton").disabled = false;
   document.getElementById("SButton").disabled = false;
+  document.getElementById("StartButton").disabled = false;
 }
 
 function iterDisplay0() {
   document.getElementById("instructions").innerHTML = "&nbsp;";
+  document.getElementById("StartButton").disabled = true;
   document.getElementById("RButton").disabled = true;
   document.getElementById("PButton").disabled = true;
   document.getElementById("SButton").disabled = true;
@@ -85,6 +87,7 @@ function iterDisplay4() {
   document.getElementById("RButton").disabled = false;
   document.getElementById("PButton").disabled = false;
   document.getElementById("SButton").disabled = false;
+  document.getElementById("StartButton").disabled = false;
   document.getElementById("instructions").innerHTML = "Your turn, human!";
 }
 
