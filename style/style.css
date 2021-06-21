@@ -2,6 +2,9 @@ body {
   background-color: #F1E6B2;
 }
 
+button {
+  height: 2.5em;
+}
 a {
   color: #01426A;
 }
