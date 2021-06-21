@@ -2,24 +2,25 @@
 
 <head>
 	<title>Rock &hArr; Paper &hArr; Scissors &mdash; Scoring Tool</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="scripts/RPS_ScoringTool.js"></script>
 </head>
 
-<body onLoad="initialize()" bgcolor="#FCF4DF">
+<body onLoad="initialize()">
 
 	<h1>Rock &hArr; Paper &hArr; Scissors</h1>
 	<h2>Scoring Tool</h2>
 
 	<p>
-		Enter the student&rsquo;s first name: <input id="name" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('ProcessButton').click()"><br />
+		Enter the student&rsquo;s first name: <input id="name" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('ProcessButton').click()">&nbsp;&nbsp;
 		<button id="ProcessButton" type="button" onClick="start()">Get errors for this student</button>
 	</p>
-	<table cellpadding="10px" cellspacing="0" border="0" width="400px" style="border: solid 5px #000;">
+	<table cellpadding="10px" cellspacing="0" border="0" width="480px">
 		<tbody>
 			<tr>
-				<td style="background:#9AB9AD;">
+				<td>
 					<p>
-					<div id="Output">&nbsp;</div>
+					<div id="Output" class="playarea" style="padding: 10px;">&nbsp;</div>
 					</p>
 				</td>
 			</tr>

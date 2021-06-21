@@ -2,14 +2,15 @@
 
 <head>
   <title>Rock &hArr; Paper &hArr; Scissors</title>
+  <link href="style/style.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="scripts/RPS.js"></script>
 </head>
 
-<body onLoad="initialize()" bgcolor="#FCF4DF">
+<body onLoad="initialize()">
   <table border="0" cellpadding="15px">
     <tr>
-      <td style="vertical-align:top; border: solid 5px #000; background: #9AB9AD;">
-        <table width="480px" border="0" style="background: #BF5700; border: solid 1px #000; margin:5px;">
+      <td class="playarea">
+        <table width="480px" border="0" class="playcontrols">
           <tr>
             <td>
               <button id="RButton" type="button" onClick="playRock()">&nbsp;&nbsp;Rock&nbsp;&nbsp;</button>
@@ -26,7 +27,7 @@
         </table>
 
         <div id="Console">&nbsp;</div>
-        <div id="msg" align="right">&nbsp;</div>
+        <div id="Message" align="right">&nbsp;</div>
 
       </td>
       <td style="vertical-align:top;">

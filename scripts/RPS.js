@@ -7,19 +7,21 @@ var selectHuman,
     oldresults,
     turn,
     resolutionMatrix,
-    winMsgMatrix,
+    winMessageMatrix,
     name,
     mistake1,
     mistake2;
 
+    const tick = 1.5;
+
 function initialize()
 {
-	document.getElementById("msg").innerHTML="Enter your name and press 'Start' to begin! &#8594;";
+	document.getElementById("Message").innerHTML="Enter your name and press 'Start' to begin! &#8594;";
 	document.getElementById("RButton").disabled=true;
 	document.getElementById("PButton").disabled=true;
 	document.getElementById("SButton").disabled=true;
 	resolutionMatrix=[0,-1,1,1,0,-1,-1,1,0];
-	winMsgMatrix=["Computer wins!","It's a tie!","Human wins!"];
+	winMessageMatrix=["Computer wins!","It's a tie!","Human wins!"];
 }
 
 function start()
@@ -41,7 +43,7 @@ function start()
 	document.getElementById("name").disabled=true;
 	document.getElementById("instructions").innerHTML="You go first, human!";
 	document.getElementById("Console").innerHTML="&nbsp;";
-	document.getElementById("msg").innerHTML="&nbsp;";
+	document.getElementById("Message").innerHTML="&nbsp;";
 	document.getElementById("StartButton").innerHTML="Restart";
 	document.getElementById("RButton").disabled=false;
 	document.getElementById("PButton").disabled=false;
@@ -53,36 +55,36 @@ function iterDisplay0() {
         document.getElementById("RButton").disabled=true;
         document.getElementById("PButton").disabled=true;
         document.getElementById("SButton").disabled=true;
-        results='<tr><td align="center" style="background-color:#003333; color:#ffffff; height:116px;" width="12%">&nbsp;</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%"><img src="./images/BlankU.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%"><img src="./images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="22%">&nbsp;</td></tr>'+oldresults;
-        document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
-        document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>&nbsp;</h2></td></tr></tbody></table>';
+        results='<tr><td align="center" width="12%" class="results">&nbsp;</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>'+oldresults;
+        document.getElementById("Message").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>'+results+'</tbody></table>';
+        document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>Get Ready!</h2></td></tr></tbody></table>';
 }
 
 function iterDisplay1() {
-	results='<tr><td align="center" style="background-color:#003333; color:#ffffff; height:116px;" width="12%">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%"><img src="./images/BlankU.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%"><img src="./images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="22%">&nbsp;</td></tr>'+oldresults;
-	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
-    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... </h2></td></tr></tbody></table>';
+	results='<tr><td align="center" width="12%" class="results">Turn<br/>'+turn+'</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>'+oldresults;
+	document.getElementById("Message").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>'+results+'</tbody></table>';
+    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... <img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
 
 
 function iterDisplay2() {
-	results='<tr><td align="center" style="background-color:#003333; color:#ffffff; height:116px;" width="12%">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%"><img src="./images/BlankC.png"/></td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="22%">&nbsp;</td></tr>'+oldresults;
-	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
-	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... </h2></td></tr></tbody></table>';
+	results='<tr><td align="center" width="12%" class="results">Turn<br/>'+turn+'</td><td align="center" width="33%" class="pane">'+uImg+'</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>'+oldresults;
+	document.getElementById("Message").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>'+results+'</tbody></table>';
+	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... 2... <img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
 
 function iterDisplay3() {
 
-	results='<tr><td align="center" style="background-color:#003333; color:#ffffff; height:116px;" width="12%">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%">'+cImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="22%">&nbsp;</td></tr>'+oldresults;
-	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
-    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... 3!!!</h2></td></tr></tbody></table>';
+	results='<tr><td align="center" width="12%" class="results">Turn<br/>'+turn+'</td><td align="center" width="33%" class="pane">'+uImg+'</td><td align="center" width="33%" class="pane">'+cImg+'</td><td align="center" width="22%" class="pane">&nbsp;</td></tr>'+oldresults;
+	document.getElementById("Message").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>'+results+'</tbody></table>';
+    document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... 2... 3!!! &nbsp;&nbsp;<img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
 
 function iterDisplay4() {
 
-	results='<tr><td align="center" style="background-color:#003333; color:#ffffff; height:116px;" width="12%">Turn<br/>'+turn+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%">'+uImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="33%">'+cImg+'</td><td align="center" style="background:#e5e5dd; border:1px solid #000033; margin:5px;" width="22%">Human '+scoreHuman+'<br/><br/>Computer '+scoreComputer+'</td></tr>'+oldresults;
-	document.getElementById("msg").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="background-color:#ffffff; border:1px solid #000033; margin:5px;"><tbody>'+results+'</tbody></table>';
-	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" style="border:1px solid #000033; margin:5px; background-color:#ccc999;"><tbody><tr><td><h2>1... 2... 3!!! &nbsp;&nbsp;&nbsp;&nbsp;'+winner+'</h2></td></tr></tbody></table>';
+	results='<tr><td align="center" width="12%" class="results">Turn<br/>'+turn+'</td><td align="center" width="33%" class="pane">'+uImg+'</td><td align="center" width="33%" class="pane">'+cImg+'</td><td align="center" width="22%" class="pane">Human '+scoreHuman+'<br/><br/>Computer '+scoreComputer+'</td></tr>'+oldresults;
+	document.getElementById("Message").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>'+results+'</tbody></table>';
+	document.getElementById("Console").innerHTML='<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... 2... 3!!! &nbsp;&nbsp;'+winner+'</h2></td></tr></tbody></table>';
 	document.getElementById("RButton").disabled=false;
 	document.getElementById("PButton").disabled=false;
 	document.getElementById("SButton").disabled=false;
@@ -94,10 +96,10 @@ function display()
 	turn+=1;
 	oldresults=results;
 	setTimeout("iterDisplay0()",0);
-	setTimeout("iterDisplay1()",1500);
-	setTimeout("iterDisplay2()",3000);
-	setTimeout("iterDisplay3()",4500);
-	setTimeout("iterDisplay4()",6000);
+	setTimeout("iterDisplay1()",tick*1500);
+	setTimeout("iterDisplay2()",tick*2500);
+	setTimeout("iterDisplay3()",tick*3500);
+	setTimeout("iterDisplay4()",tick*4500);
 }
 
 function computerTurn()
@@ -150,5 +152,5 @@ function whoWon()
   if (resolutionMatrix[3*selectHuman+selectComputer] < 0) {
     scoreComputer++;
   }
-	winner = winMsgMatrix[(resolutionMatrix[3*selectHuman+selectComputer])+1];
+	winner = winMessageMatrix[(resolutionMatrix[3*selectHuman+selectComputer])+1];
 }

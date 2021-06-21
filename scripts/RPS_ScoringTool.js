@@ -3,24 +3,24 @@ var resolutionMatrix, mistake1Matrix, mistake2Matrix, name, mistake1, mistake2;
 function initialize()
 {
 	resolutionMatrix=[0,-1,1,1,0,-1,-1,1,0];
-	mistake1Matrix=["Player's ROCK beats Computer's ROCK",
-					"Player's ROCK ties with Computer's PAPER",
-					"Player's ROCK loses to Computer's SCISSORS",
-					"Player's PAPER loses to Computer's ROCK",
-					"Player's PAPER beats Computer's PAPER",
-					"Player's PAPER ties with Computer's SCISSORS",
-					"Player's SCISSORS ties with Computer's ROCK",
-					"Player's SCISSORS loses to Computer's PAPER",
-					"Player's SCISSORS beats Computer's SCISSORS"];
-	mistake2Matrix=["Player's ROCK loses to Computer's ROCK",
-					"Player's ROCK beats Computer's PAPER",
-					"Player's ROCK ties with Computer's SCISSORS",
-					"Player's PAPER ties with Computer's ROCK",
-					"Player's PAPER loses to Computer's PAPER",
-					"Player's PAPER beats Computer's SCISSORS",
-					"Player's SCISSORS beats Computer's ROCK",
-					"Player's SCISSORS ties with Computer's PAPER",
-					"Player's SCISSORS loses to Computer's SCISSORS"];
+	mistake1Matrix=["Player's <strong>ROCK</strong> <em>beats</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>ROCK</strong> <em>ties with</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>ROCK</strong> <em>loses to</em> Computer's <strong>SCISSORS</strong>",
+					"Player's <strong>PAPER</strong> <em>loses to</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>PAPER</strong> <em>beats</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>PAPER</strong> <em>ties with</em> Computer's <strong>SCISSORS</strong>",
+					"Player's <strong>SCISSORS</strong> <em>ties with</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>SCISSORS</strong> <em>loses to</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>SCISSORS</strong> <em>beats</em> Computer's <strong>SCISSORS</strong>"];
+	mistake2Matrix=["Player's <strong>ROCK</strong> <em>loses to</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>ROCK</strong> <em>beats</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>ROCK</strong> <em>ties with</em> Computer's <strong>SCISSORS</strong>",
+					"Player's <strong>PAPER</strong> <em>ties with</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>PAPER</strong> <em>loses to</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>PAPER</strong> <em>beats</em> Computer's <strong>SCISSORS</strong>",
+					"Player's <strong>SCISSORS</strong> <em>beats</em> Computer's <strong>ROCK</strong>",
+					"Player's <strong>SCISSORS</strong> <em>ties with</em> Computer's <strong>PAPER</strong>",
+					"Player's <strong>SCISSORS</strong> <em>loses to</em> Computer's <strong>SCISSORS</strong>"];
 }
 
 function start()

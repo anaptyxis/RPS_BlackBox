@@ -1,0 +1,48 @@
+body {
+  background-color:#F1E6B2;
+}
+
+a {
+  color: #01426A;
+}
+
+.playarea {
+  background-color: #AED8F2;
+  vertical-align: top;
+  border: solid 5px #000000;
+}
+
+.playcontrols {
+  color: #FFFFFF;
+  background: #01426A;
+  border: solid 1px #000000;
+  margin: 5px;
+}
+
+.results {
+  background-color:#01426A;
+  color:#ffffff;
+  height:116px;
+}
+
+.message {
+  background-color:#ffffff;
+  border:1px solid #000033;
+  margin: 5px;
+}
+
+.activeConsole {
+  border:1px solid #000033;
+  margin:5px;
+  background-color:#F1E6B2;
+}
+
+.pane {
+  background:#CFC7AB;
+  border:1px solid #000033;
+  margin:5px;
+}
+
+.spin {
+  height: 16px;
+}
