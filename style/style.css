@@ -1,5 +1,5 @@
 body {
-  background-color:#F1E6B2;
+  background-color: #F1E6B2;
 }
 
 a {
@@ -20,27 +20,27 @@ a {
 }
 
 .results {
-  background-color:#01426A;
-  color:#ffffff;
-  height:116px;
+  background-color: #01426A;
+  color: #ffffff;
+  height: 116px;
 }
 
 .message {
-  background-color:#ffffff;
-  border:1px solid #000033;
+  background-color: #ffffff;
+  border: 1px solid #000033;
   margin: 5px;
 }
 
 .activeConsole {
-  border:1px solid #000033;
-  margin:5px;
-  background-color:#F1E6B2;
+  border: 1px solid #000033;
+  margin: 5px;
+  background-color: #F1E6B2;
 }
 
 .pane {
-  background:#CFC7AB;
-  border:1px solid #000033;
-  margin:5px;
+  background: #CFC7AB;
+  border: 1px solid #000033;
+  margin: 5px;
 }
 
 .spin {
