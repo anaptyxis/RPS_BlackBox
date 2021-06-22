@@ -12,10 +12,19 @@ a {
   color: #01426A;
 }
 
+h1 {
+    margin-top: 0;
+}
+
+#instructions {
+  padding-left: 0.5em;
+}
+
 .playarea {
   background-color: #AED8F2;
   vertical-align: top;
-  border: solid 5px #000000;
+  border: solid 2px #000000;
+  box-shadow: 5px 5px 15px #333333;
 }
 
 .playcontrols {
@@ -23,16 +32,17 @@ a {
   background: #01426A;
   border: solid 1px #000000;
   margin: 5px;
+  padding: 1px;
 }
 
 .results {
   background-color: #01426A;
-  color: #ffffff;
+  color: #FFFFFF;
   height: 116px;
 }
 
 .message {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: 1px solid #000033;
   margin: 5px;
 }
@@ -40,7 +50,7 @@ a {
 .activeConsole {
   border: 1px solid #000033;
   margin: 5px;
-  background-color: #F1E6B2;
+  background-color: #F1E7C0;
 }
 
 .pane {
@@ -51,4 +61,15 @@ a {
 
 .spin {
   height: 16px;
+}
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.5em;
+
+}
+
+.gridcell {
+  padding: 0.7em;
 }
