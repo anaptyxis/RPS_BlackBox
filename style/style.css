@@ -38,7 +38,7 @@ h1 {
 .results {
   background-color: #01426A;
   color: #FFFFFF;
-  height: 116px;
+  height: 132px;
 }
 
 .message {
@@ -72,4 +72,8 @@ h1 {
 
 .gridcell {
   padding: 0.7em;
+}
+
+.caption {
+  font-size: small;
 }

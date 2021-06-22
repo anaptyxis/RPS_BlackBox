@@ -58,27 +58,27 @@ function iterDisplay0() {
   document.getElementById("RButton").disabled = true;
   document.getElementById("PButton").disabled = true;
   document.getElementById("SButton").disabled = true;
-  results = '<tr><td align="center" width="12%" class="results">&nbsp;</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
+  results = '<tr><td align="center" width="12%" class="results"><img class="spin" src="images/spinner.gif"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
   document.getElementById("Message").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>' + results + '</tbody></table>';
   document.getElementById("Console").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>Get Ready!</h2></td></tr></tbody></table>';
 }
 
 function iterDisplay1() {
-  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
+  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane"><img class="spin"  src="./images/spinner.gif"/></td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
   document.getElementById("Message").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>' + results + '</tbody></table>';
   document.getElementById("Console").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... <img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
 
 
 function iterDisplay2() {
-  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane">' + uImg + '</td><td align="center" width="33%" class="pane"><img src="./images/Blank.png"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
+  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane">' + uImg + '</td><td align="center" width="33%" class="pane"><img class="spin"  src="./images/spinner.gif"/></td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
   document.getElementById("Message").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>' + results + '</tbody></table>';
   document.getElementById("Console").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... 2... <img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
 
 function iterDisplay3() {
 
-  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane">' + uImg + '</td><td align="center" width="33%" class="pane">' + cImg + '</td><td align="center" width="22%" class="pane">&nbsp;</td></tr>' + oldresults;
+  results = '<tr><td align="center" width="12%" class="results">Turn<br/>' + turn + '</td><td align="center" width="33%" class="pane">' + uImg + '</td><td align="center" width="33%" class="pane">' + cImg + '</td><td align="center" width="22%" class="pane"><img class="spin"  src="./images/spinner.gif"/></td></tr>' + oldresults;
   document.getElementById("Message").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="message"><tbody>' + results + '</tbody></table>';
   document.getElementById("Console").innerHTML = '<table cellspacing="5" cellpadding="5" border="0" width="480" class="activeConsole"><tbody><tr><td><h2>1... 2... 3!!! &nbsp;&nbsp;<img class="spin" src="images/spinner.gif"/></h2></td></tr></tbody></table>';
 }
@@ -108,32 +108,33 @@ function display() {
 function computerTurn() {
   selectComputer = Math.floor(Math.random() * 3);
   if (selectComputer == 0) {
-    cImg = '<img src="./images/RockC.png" title="Computer plays Rock" alt="Computer plays Rock"\>';
+    cImg = '<img src="./images/RockC.png" title="Computer plays Rock" alt="Computer plays Rock"\><span class="caption">Computer plays Rock.</span>';
   } else if (selectComputer == 1) {
-    cImg = '<img src="./images/PaperC.png" title="Computer plays Paper" alt="Computer plays Paper"\>';
+    cImg = '<img src="./images/PaperC.png" title="Computer plays Paper" alt="Computer plays Paper"\><span class="caption">Computer plays Scissors.</span>';
   } else {
-    cImg = '<img src="./images/ScissorsC.png" title="Computer plays Scissors" alt="Computer plays Scissors"\>';
+    cImg = '<img src="./images/ScissorsC.png" title="Computer plays Scissors" alt="Computer plays Scissors"\><br/><span class="caption">Computer plays Scissors.</span>';
   }
   whoWon();
 }
 
 function playRock() {
   selectHuman = 0;
-  uImg = '<img src="./images/RockU.png" title="Human plays Rock" alt="Human plays Rock"\>';
+//  uImg = '<img src="./images/RockU.png" title="Human plays Rock" alt="Human plays Rock"\>';
+uImg = '<img src="./images/RockU.png" title="Human plays Rock" alt="Human plays Rock"\><br/><span class="caption">Human plays Rock.</span>';
   computerTurn();
   display();
 }
 
 function playPaper() {
   selectHuman = 1;
-  uImg = '<img src="./images/PaperU.png" title="Human plays Paper" alt="Human plays Paper"\>';
+  uImg = '<img src="./images/PaperU.png" title="Human plays Paper" alt="Human plays Paper"\><span class="caption">Human plays Paper.</span>';
   computerTurn();
   display();
 }
 
 function playScissors() {
   selectHuman = 2;
-  uImg = '<img src="./images/ScissorsU.png" title="Human plays Scissors" alt="Human plays Scissors"\>';
+  uImg = '<img src="./images/ScissorsU.png" title="Human plays Scissors" alt="Human plays Scissors"\><span class="caption">Human plays Scissors.</span>';
   computerTurn();
   display();
 }
