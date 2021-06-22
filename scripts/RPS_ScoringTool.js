@@ -26,6 +26,10 @@ function initialize() {
 
 function start() {
   name = document.getElementById("name").value;
+  if (name.length < 2) {
+    alert("Name must be at least 2 characters.");
+    return;
+  }
   name = name.toLowerCase();
   mistake1 = (name.charCodeAt(0) - "a".charCodeAt(0)) % 9;
   mistake2 = (name.charCodeAt(1) - "a".charCodeAt(0)) % 9;
