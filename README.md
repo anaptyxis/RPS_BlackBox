@@ -19,3 +19,8 @@ Errors differ across individuals are based on the 'Name' entered at the start of
 ## Scoring Tool
 
 Because student errors differ according to their names (as seeds), the instructor requires a tool that displays the &ldquo;correct&rdquo; errors for a given student. The scoring tool takes a case-insenstive name as input and displays the associated errors. Alternatively, students may be given access to the Scoring Tool to self-check their work.
+
+***
+
+Access the game [here](https://anaptyxis.github.io/RPS_BlackBox/RPS.html).
+Access the scoring tool [here](https://anaptyxis.github.io/RPS_BlackBox/RPS_ScoringTool.html).
