@@ -22,5 +22,5 @@ Because student errors differ according to their names (as seeds), the instructo
 
 ***
 
-Access the game [here](https://anaptyxis.github.io/RPS_BlackBox/RPS.html).
-Access the scoring tool [here](https://anaptyxis.github.io/RPS_BlackBox/RPS_ScoringTool.html).
+* Access the game [here](https://anaptyxis.github.io/RPS_BlackBox/RPS.html).
+* Access the scoring tool [here](https://anaptyxis.github.io/RPS_BlackBox/RPS_ScoringTool.html).
