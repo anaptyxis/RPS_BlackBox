@@ -110,7 +110,7 @@ function computerTurn() {
   if (selectComputer == 0) {
     cImg = '<img src="./images/RockC.png" title="Computer plays Rock" alt="Computer plays Rock"\><span class="caption">Computer plays Rock.</span>';
   } else if (selectComputer == 1) {
-    cImg = '<img src="./images/PaperC.png" title="Computer plays Paper" alt="Computer plays Paper"\><span class="caption">Computer plays Scissors.</span>';
+    cImg = '<img src="./images/PaperC.png" title="Computer plays Paper" alt="Computer plays Paper"\><span class="caption">Computer plays Paper.</span>';
   } else {
     cImg = '<img src="./images/ScissorsC.png" title="Computer plays Scissors" alt="Computer plays Scissors"\><br/><span class="caption">Computer plays Scissors.</span>';
   }
